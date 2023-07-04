@@ -18,7 +18,7 @@ const form_state = reactive({
 })
 
 const submit = async () => {
-    await DataService.post('/login', form_state)
+    await DataService.post('/api/login.json', form_state)
     .then((response) => {
 
         if (response.status === 200) {
@@ -35,25 +35,20 @@ const submit = async () => {
             toast.add({severity:'error', summary: 'خطا', detail:'رمز عبور یا شماره همراه اشتباه است', life: 3000});
         }
 
-    }).catch((error) => {
-        console.log(error)
-        if (error.status === 401) {
-            toast.add({severity:'error', summary: 'خطا', detail:'رمز عبور یا شماره همراه اشتباه است', life: 3000});
-        }
-    })
+    }) 
 }
 </script>
 
 <template>
     <div class="main-layout w-screen h-screen flex justify-center items-center bg-gradient-to-r from-sky-800 to-blue-950">
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 w-[90%] lg:w-2/3 h-[80%]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 w-[90%] lg:w-2/3 lg:h-[80%]">
 
             <div>
-                <img src="../assets/img/img.jpg" alt="background image" class="absolute lg:relative top-0 right-0 left-0 h-42 w-screen lg:w-full lg:h-full lg:rounded-l-xl object-cover">
+                <img src="../assets/img/img.jpg" alt="background image" class="absolute lg:relative top-0 right-0 left-0 h-72 w-screen lg:w-full lg:h-full lg:rounded-l-xl object-cover">
             </div>
 
-            <form @submit.prevent="submit" class="bg-white p-4 lg:p-24 rounded-xl lg:rounded-l-none lg:rounded-r-xl flex flex-col justify-center relative z-10  mt-16 lg:mt-0">
+            <form @submit.prevent="submit" class="bg-white p-8 lg:p-24 rounded-xl lg:rounded-l-none lg:rounded-r-xl flex flex-col justify-start lg:justify-center relative z-10 -mt-16 lg:mt-0">
 
                 <h1 class="text-2xl mb-2 font-bold text-center w-full text-gray-700 right-0">Login</h1>
 
