@@ -9,7 +9,10 @@ function changeTheme() {
 
     const body: any = document.querySelector('body')
 
+    const html: any = document.querySelector('html')
+
     body.classList.toggle("dark");
+    html.classList.toggle("dark");
 }
 </script>
 <template>
