@@ -6,17 +6,17 @@
         <ul class="menu-links">
 
             <li class="nav-link">
-                <a href="#">
+                <RouterLink to="/">
                     <i class="bx bx-home-alt icon"></i>
                     <span class="text nav-text">Dashobard</span>
-                </a>
+                </RouterLink>
             </li>
 
             <li class="nav-link">
-                <a href="#">
+                <RouterLink to="/users">
                     <i class="bx bx-user icon"></i>
                     <span class="text nav-text">Users</span>
-                </a>
+                </RouterLink>
             </li>
 
         </ul>
